@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>贪吃蛇游戏</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <header class="game-header">
+            <h1 class="game-title">🐍 贪吃蛇游戏</h1>
+            <div class="game-info">
+                <div class="score-display">
+                    <span class="label">得分:</span>
+                    <span id="score">0</span>
+                </div>
+                <div class="high-score-display">
+                    <span class="label">最高分:</span>
+                    <span id="highScore">0</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="game-main">
+            <div class="game-board-container">
+                <canvas id="gameCanvas" width="400" height="400"></canvas>
+                <div id="gameOverlay" class="game-overlay hidden">
+                    <div class="overlay-content">
+                        <h2 id="overlayTitle">游戏开始</h2>
+                        <p id="overlayMessage">按空格键开始游戏</p>
+                        <button id="startButton" class="game-button">开始游戏</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-controls">
+                <div class="control-section">
+                    <h3>游戏设置</h3>
+                    <div class="control-group">
+                        <label for="speedSlider">速度:</label>
+                        <input type="range" id="speedSlider" min="1" max="10" value="5">
+                        <span id="speedValue">5</span>
+                    </div>
+                    <div class="control-group">
+                        <label for="difficultySelect">难度:</label>
+                        <select id="difficultySelect">
+                            <option value="easy">简单</option>
+                            <option value="medium" selected>中等</option>
+                            <option value="hard">困难</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="control-section">
+                    <h3>操作说明</h3>
+                    <div class="controls-info">
+                        <div class="control-item">
+                            <span class="key">↑↓←→</span>
+                            <span>方向键控制</span>
+                        </div>
+                        <div class="control-item">
+                            <span class="key">触屏</span>
+                            <span>滑动控制</span>
+                        </div>
+                        <div class="control-item">
+                            <span class="key">空格</span>
+                            <span>暂停/继续</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-section">
+                    <h3>排行榜</h3>
+                    <div id="leaderboard" class="leaderboard">
+                        <div class="leaderboard-item">
+                            <span class="rank">1.</span>
+                            <span class="score">0</span>
+                        </div>
+                        <div class="leaderboard-item">
+                            <span class="rank">2.</span>
+                            <span class="score">0</span>
+                        </div>
+                        <div class="leaderboard-item">
+                            <span class="rank">3.</span>
+                            <span class="score">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-section">
+                    <div class="game-buttons">
+                        <button id="pauseButton" class="game-button">暂停</button>
+                        <button id="resetButton" class="game-button">重新开始</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
